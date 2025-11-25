@@ -4,7 +4,7 @@ import { eq } from 'drizzle-orm';
 import { db } from '../config/database';
 import { users, User } from '../db/schema';
 import { env } from '../config/env';
-import { UnauthorizedError, ConflictError } from '../utils/errors';
+import { UnauthorizedError } from '../utils/errors';
 import { BCRYPT_SALT_ROUNDS } from '../utils/constants';
 import { JWTPayload } from '../types';
 

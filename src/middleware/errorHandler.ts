@@ -12,7 +12,7 @@ export function errorHandler(
     err: Error,
     req: Request,
     res: Response,
-    next: NextFunction
+    _next: NextFunction
 ): void {
     // Handle operational errors (AppError instances)
     if (err instanceof AppError) {
@@ -47,7 +47,7 @@ export function errorHandler(
 export function notFoundHandler(
     req: Request,
     res: Response,
-    next: NextFunction
+    _next: NextFunction
 ): void {
     res.status(404).json(
         errorResponse(`Route ${req.method} ${req.url} not found`)

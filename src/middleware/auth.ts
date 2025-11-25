@@ -13,7 +13,7 @@ import { AuthRequest, JWTPayload } from '../types';
  */
 export async function authenticate(
     req: AuthRequest,
-    res: Response,
+    _res: Response,
     next: NextFunction
 ): Promise<void> {
     try {
@@ -60,7 +60,7 @@ export async function authenticate(
  */
 export async function optionalAuth(
     req: AuthRequest,
-    res: Response,
+    _res: Response,
     next: NextFunction
 ): Promise<void> {
     try {

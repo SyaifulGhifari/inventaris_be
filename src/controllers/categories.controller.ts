@@ -3,7 +3,7 @@ import { sql, isNull } from 'drizzle-orm';
 import { db } from '../config/database';
 import { products } from '../db/schema';
 import { successResponse } from '../utils/response';
-import { VALID_CATEGORIES, VALID_SIZES } from '../utils/constants';
+import { VALID_SIZES } from '../utils/constants';
 
 /**
  * Categories Controller
@@ -14,7 +14,7 @@ export class CategoriesController {
      * GET /api/categories
      * Get all product categories with product counts
      */
-    async getCategories(req: Request, res: Response, next: NextFunction) {
+    async getCategories(_req: Request, res: Response, next: NextFunction) {
         try {
             // Get categories with product counts
             const categories = await db
@@ -43,7 +43,7 @@ export class CategoriesController {
      * GET /api/sizes
      * Get all available product sizes
      */
-    async getSizes(req: Request, res: Response, next: NextFunction) {
+    async getSizes(_req: Request, res: Response, next: NextFunction) {
         try {
             // Return static array of valid sizes
             res.status(200).json(successResponse([...VALID_SIZES]));

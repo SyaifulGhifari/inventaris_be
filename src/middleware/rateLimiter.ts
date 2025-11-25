@@ -12,7 +12,7 @@ export const apiLimiter = rateLimit({
     message: errorResponse('Too many requests, please try again later'),
     standardHeaders: true, // Return rate limit info in `RateLimit-*` headers
     legacyHeaders: false, // Disable `X-RateLimit-*` headers
-    handler: (req, res) => {
+    handler: (_req, res) => {
         res.status(429).json(
             errorResponse('Too many requests, please try again later', {
                 retryAfter: Math.ceil(env.RATE_LIMIT_WINDOW_MS / 1000),
@@ -32,7 +32,7 @@ export const authLimiter = rateLimit({
     standardHeaders: true,
     legacyHeaders: false,
     skipSuccessfulRequests: true, // Don't count successful requests
-    handler: (req, res) => {
+    handler: (_req, res) => {
         res.status(429).json(
             errorResponse('Too many login attempts, please try again later', {
                 retryAfter: 900, // 15 minutes in seconds

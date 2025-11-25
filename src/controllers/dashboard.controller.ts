@@ -11,7 +11,7 @@ export class DashboardController {
      * GET /api/dashboard/stats
      * Get overall dashboard statistics
      */
-    async getStats(req: Request, res: Response, next: NextFunction) {
+    async getStats(_req: Request, res: Response, next: NextFunction) {
         try {
             const stats = await dashboardService.getDashboardStats();
 

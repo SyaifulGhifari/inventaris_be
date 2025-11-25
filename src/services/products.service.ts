@@ -1,4 +1,4 @@
-import { eq, and, isNull, ilike, sql, asc, desc, lt } from 'drizzle-orm';
+import { eq, and, isNull, ilike, sql, asc, desc } from 'drizzle-orm';
 import { db } from '../config/database';
 import { products, Product, NewProduct } from '../db/schema';
 import { NotFoundError, ConflictError } from '../utils/errors';
