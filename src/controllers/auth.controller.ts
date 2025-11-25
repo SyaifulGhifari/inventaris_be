@@ -31,7 +31,7 @@ export class AuthController {
      * POST /api/auth/logout
      * Logout user (client-side token removal)
      */
-    async logout(req: AuthRequest, res: Response, next: NextFunction) {
+    async logout(_req: AuthRequest, res: Response, next: NextFunction) {
         try {
             // In a stateless JWT setup, logout is handled client-side
             // The client should remove the token from storage

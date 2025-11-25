@@ -30,3 +30,7 @@ export async function testConnection(): Promise<boolean> {
         return false;
     }
 }
+
+export async function closeConnection(): Promise<void> {
+    await pool.end();
+}
