@@ -22,11 +22,13 @@ async function startServer() {
         // Create Express app
         const app = createApp();
 
+        const port = process.env.PORT || 3000;
+
         // Start server
-        const server = app.listen(env.PORT, () => {
-            logger.info(`Server running on port ${env.PORT}`);
+        const server = app.listen(port, () => {
+            logger.info(`Server running on port ${port}`);
             logger.info(`Environment: ${env.NODE_ENV}`);
-            logger.info(`API URL: http://localhost:${env.PORT}${env.API_PREFIX}`);
+            logger.info(`API URL: http://localhost:${port}${env.API_PREFIX}`);
         });
 
         // Graceful shutdown

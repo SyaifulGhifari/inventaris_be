@@ -4,9 +4,9 @@
   "description": "Backend API for Textile Warehouse Management System",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "start": "node ./dist/server.js",
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio",

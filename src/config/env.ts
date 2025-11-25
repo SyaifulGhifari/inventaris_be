@@ -13,11 +13,7 @@ const envSchema = z.object({
     API_PREFIX: z.string().default('/api'),
 
     // Database
-    DB_HOST: z.string().default('localhost'),
-    DB_PORT: z.string().transform(Number).default('5432'),
-    DB_USER: z.string().default('postgres'),
-    DB_PASSWORD: z.string(),
-    DB_NAME: z.string().default('gudang_tekstil'),
+    DATABASE_URL: z.string(),
 
     // JWT
     JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters'),
